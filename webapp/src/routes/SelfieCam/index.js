@@ -53,8 +53,8 @@ const SelfieCam = () => {
   const [ggoodsSelected, setGgoodsSelected] = useState()
   const { loading, data } = useQuery(MY_GGOODS)
   const [nftSetting, setNftSetting] = useState({
-    width: 200,
-    height: 200,
+    width: 100,
+    height: 100,
     x: 50,
     y: 50
   })
@@ -220,11 +220,11 @@ const SelfieCam = () => {
                     default={{
                       x: 10,
                       y: 20,
-                      width: 200,
-                      height: 200
+                      width: 100,
+                      height: 100
                     }}
-                    minWidth={200}
-                    minHeight={200}
+                    minWidth={100}
+                    minHeight={100}
                     bounds="window"
                     onDragStop={handleOnDragStop}
                     onResizeStop={handleOnResizeStop}
