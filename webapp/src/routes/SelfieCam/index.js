@@ -119,17 +119,14 @@ const SelfieCam = () => {
   const handleOnResizeStop = (e, direction, ref, delta, position) => {
     const width = ref.style.width.split('px')
     const height = ref.style.height.split('px')
-    console.log({ width })
-    downloadURI({
+    const values = {
       ...nftSetting,
       width: parseInt(width[0]),
       height: parseInt(height[0])
-    })
-    setNftSetting({
-      ...nftSetting,
-      width: parseInt(width[0]),
-      height: parseInt(height[0])
-    })
+    }
+
+    downloadURI(values)
+    setNftSetting(values)
   }
 
   return (
@@ -187,7 +184,7 @@ const SelfieCam = () => {
         }}
       >
         <Fade in={open}>
-          <Box className={classes.paper}>
+          <div className={classes.paper}>
             {!selfie && (
               <Camera
                 onTakePhoto={dataUri => {
@@ -265,7 +262,7 @@ const SelfieCam = () => {
                 </Box>
               </>
             )}
-          </Box>
+          </div>
         </Fade>
       </Modal>
     </Box>
